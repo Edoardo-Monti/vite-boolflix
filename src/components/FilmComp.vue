@@ -6,8 +6,10 @@ export default{
 </script>
 <template>
 <div class="box1">
-    <h1>{{ propsFilm.title }}</h1>
-    <h2>{{ propsFilm.original_title }}</h2>
+    <h1><mark>TITOLO:</mark> {{ propsFilm.title }}</h1>
+    <h2><mark>TITOLO ORIGINALE:</mark> {{ propsFilm.original_title }}</h2>
+    <p><mark>LINGUA:</mark>  {{ propsFilm.original_language }}</p>
+    <p><mark>VOTO:</mark>  {{ propsFilm.vote_average }}</p>
 </div>
 </template>
 <style lang="scss" scoped>

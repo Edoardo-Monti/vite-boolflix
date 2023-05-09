@@ -16,7 +16,7 @@ export default{
     <img src="/img/Netflix-Logo.png" alt="">
     <div class="input">
       <input type="text" v-model="store.varTesto">
-      <button>click me</button>
+      <button @click="$emit('emitFilm')">click me</button>
     </div>
   </div>
 </template>

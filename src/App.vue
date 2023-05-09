@@ -22,13 +22,23 @@ export default{
   },
   methods:{
     apiFilms(){
-      axios.get(`https://api.themoviedb.org/3/search/movie?api_key=3cae1d84aa03d2da64f3fe5b2014b691&query=bat`).then((res) => {
+      if(store.varTesto == ""){
+        axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=3cae1d84aa03d2da64f3fe5b2014b691`).then((res) => {
+  
+          const dati = res.data.results
 
-        const dati = res.data.results
-
-        store.array = dati
-        // console.log(res.data.results)
-      })
+          store.array = dati
+          // console.log(res.data.results)
+        })
+      }else{
+        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=3cae1d84aa03d2da64f3fe5b2014b691&query=${store.varTesto}`).then((res) => {
+  
+          const dati = res.data.results
+  
+          store.array = dati
+          // console.log(res.data.results)
+        })
+      }
     }
   }
 }
@@ -37,7 +47,7 @@ export default{
 
 <template>
   <div>
-    <HeaderComp/>
+    <HeaderComp @emitFilm="apiFilms"/>
     <MainComp/>
   </div>
 </template>
