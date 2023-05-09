@@ -1,5 +1,6 @@
 <script >
 import HeaderComp from './components/HeaderComp.vue';
+import MainComp from './components/MainComp.vue';
 import {store} from './store';
 
 
@@ -7,8 +8,9 @@ import {store} from './store';
 export default{
   name: 'App',
   components: {
-    HeaderComp
-  },
+    HeaderComp,
+    MainComp
+},
   data(){
     return{
       store
@@ -21,6 +23,7 @@ export default{
 <template>
   <div>
     <HeaderComp/>
+    <MainComp/>
   </div>
 </template>
 

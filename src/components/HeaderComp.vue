@@ -1,12 +1,19 @@
 <script>
+import {store} from "../store"
+
 export default{
-  name:"HeaderComp"
+  name:"HeaderComp",
+  data(){
+    return{
+      store
+    }
+  }
 }
 </script>
 
 <template>
   <div class="d-flex justify-content-around align-items-center">
-    <img src="../../public/img/Netflix-Logo.png" alt="">
+    <img src="/img/Netflix-Logo.png" alt="">
     <div class="input">
       <input  type="text">
       <button>click me</button>
@@ -23,6 +30,12 @@ div{
   }
   .input{
     height: 30px;
+    input{
+      border: none;
+    }
+    button{
+      border: none;
+    }
   }
 }
 </style>
