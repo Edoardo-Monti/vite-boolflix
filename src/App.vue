@@ -48,10 +48,17 @@ export default{
 <template>
   <div>
     <HeaderComp @emitFilm="apiFilms"/>
-    <MainComp/>
+    <div class="bg-color">
+      <MainComp/>
+    </div>
   </div>
 </template>
 
 <style lang="scss">
 @use "./style/main.scss";
+.bg-color{
+  background-color: rgb(34, 34, 34);
+  height: 100vh;
+}
+
 </style>

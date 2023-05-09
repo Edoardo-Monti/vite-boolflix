@@ -15,7 +15,7 @@ export default{
   <div class="d-flex justify-content-around align-items-center">
     <img src="/img/Netflix-Logo.png" alt="">
     <div class="input">
-      <input type="text" v-model="store.varTesto">
+      <input type="text" v-model="store.varTesto" placeholder="  cerca un film" >
       <button @click="$emit('emitFilm')">click me</button>
     </div>
   </div>

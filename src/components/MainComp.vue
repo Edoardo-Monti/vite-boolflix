@@ -8,7 +8,8 @@ export default{
     components: { FilmComp, SeriesComp },
     data(){
         return{
-            store
+            store,
+            
         }
     }
     
@@ -19,7 +20,7 @@ export default{
     <div class="">
         <div class="cont-80">
             <FilmComp v-for="(elem, index) in store.array"
-            :propsFilm="elem"/>
+            :propsFilm="elem" :propsPathFilm="store.pathFilm"/>
         </div>
         <div>
             <SeriesComp/>

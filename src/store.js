@@ -3,7 +3,8 @@ import {reactive} from "vue";
 export const store = reactive(
     {
         array: [],
-        varTesto:""
+        varTesto:"",
+        pathFilm: "https://image.tmdb.org/t/p/w342"
     }
 
 )
