@@ -16,7 +16,8 @@ export default{
 
 </script>
 <template>
-<FilmComp/>
+<FilmComp v-for="(elem, index) in store.array"
+:propsFilm="elem"/>
 <SeriesComp/>
 </template>
 <style lang="scss" scoped>

@@ -15,7 +15,7 @@ export default{
   <div class="d-flex justify-content-around align-items-center">
     <img src="/img/Netflix-Logo.png" alt="">
     <div class="input">
-      <input  type="text">
+      <input type="text" v-model="store.varTesto">
       <button>click me</button>
     </div>
   </div>
