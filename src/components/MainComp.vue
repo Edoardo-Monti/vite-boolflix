@@ -16,10 +16,24 @@ export default{
 
 </script>
 <template>
-<FilmComp v-for="(elem, index) in store.array"
-:propsFilm="elem"/>
-<SeriesComp/>
+    <div class="">
+        <div class="cont-80">
+            <FilmComp v-for="(elem, index) in store.array"
+            :propsFilm="elem"/>
+        </div>
+        <div>
+            <SeriesComp/>
+        </div>
+    </div>
 </template>
 <style lang="scss" scoped>
-
+.cont-80{
+    width: 80%;
+    margin: 0 auto;
+    padding: 30px 0;
+    overflow-y: scroll;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 </style>
