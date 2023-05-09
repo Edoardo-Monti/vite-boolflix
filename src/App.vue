@@ -1,10 +1,18 @@
 <script >
+import HeaderComp from './components/HeaderComp.vue';
+import {store} from './store';
+
 
 
 export default{
   name: 'App',
   components: {
-    
+    HeaderComp
+  },
+  data(){
+    return{
+      store
+    }
   }
 }
 
@@ -12,10 +20,10 @@ export default{
 
 <template>
   <div>
-    <h1 class="text-center">ciao</h1>
+    <HeaderComp/>
   </div>
 </template>
 
 <style lang="scss">
-@use "./style/main.scss"
+@use "./style/main.scss";
 </style>
