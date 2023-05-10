@@ -17,14 +17,16 @@ export default{
 
 </script>
 <template>
-    <div class="">
+    <div class="box">
         <h1>FILM</h1>
         <div class="cont-80">
             <FilmComp v-for="(elem, index) in store.array"
             :propsFilm="elem" :propsPathFilm="store.pathFilm"/>
         </div>
-        <div>
-            <SeriesComp/>
+        <h1>SERIE</h1>
+        <div class="cont-80">
+            <SeriesComp v-for="(elemento, index) in store.arraySerie"
+            :propsSerie="elemento" :propsPathSerie="store.pathFilm"/>
         </div>
     </div>
 </template>
