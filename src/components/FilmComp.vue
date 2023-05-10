@@ -27,7 +27,10 @@
                 return flag
             },
             vote(){
-                
+                // let vote = Math.round(propsFilm.vote_average / 2)
+                // if( vote ){
+                    
+                // }
             }
         }
     }
@@ -41,6 +44,13 @@
         <p><mark>LINGUA:</mark> <img :src="`https://flagsapi.com/${flag()}/flat/64.png`" alt=""></p>
         <p><mark>VOTO:</mark> {{ propsFilm.vote_average }}</p>
         <p><mark>VOTO:</mark> {{ Math.round(propsFilm.vote_average / 2) }}</p>
+        <div class="d-flex">
+            <i class="fa-regular fa-star" v-for="(elem, index) in 5" v-if="(elem = 3) ? '.color' : '' "></i>
+            <!-- <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i> -->
+        </div>
         
     </div>
 </template>
@@ -67,6 +77,9 @@
 
         h2 {
             font-size: 15px;
+        }
+        .color{
+            color: yellow;
         }
     }
 </style>
