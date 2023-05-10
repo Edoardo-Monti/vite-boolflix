@@ -18,6 +18,7 @@ export default{
 </script>
 <template>
     <div class="">
+        <h1>FILM</h1>
         <div class="cont-80">
             <FilmComp v-for="(elem, index) in store.array"
             :propsFilm="elem" :propsPathFilm="store.pathFilm"/>
@@ -28,6 +29,14 @@ export default{
     </div>
 </template>
 <style lang="scss" scoped>
+h1{
+        color: white;
+        padding-left: 180px;
+        padding-top: 30px;
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+    }
 .cont-80{
     width: 80%;
     margin: 0 auto;
@@ -36,5 +45,7 @@ export default{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    
 }
 </style>
