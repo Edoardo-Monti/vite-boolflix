@@ -40,6 +40,7 @@
         <h2><mark>TITOLO ORIGINALE:</mark> {{ propsFilm.original_title }}</h2>
         <p><mark>LINGUA:</mark> <img :src="`https://flagsapi.com/${flag()}/flat/64.png`" alt=""></p>
         <p><mark>VOTO:</mark> {{ propsFilm.vote_average }}</p>
+        <p><mark>VOTO:</mark> {{ Math.round(propsFilm.vote_average / 2) }}</p>
         
     </div>
 </template>
