@@ -37,6 +37,11 @@ export default{
         <p><mark>LINGUA:</mark> <img :src="`https://flagsapi.com/${flag()}/flat/64.png`" alt=""></p>
         <p><mark>VOTO:</mark> {{ propsSerie.vote_average }}</p>
         <p><mark>VOTO:</mark> {{ Math.round(propsSerie.vote_average / 2) }}</p>
+        <div class="d-flex">
+            <i class="fa-solid fa-star" style="color: #ffee2e;" v-for="(elem, index) in Math.round(propsSerie.vote_average / 2)"></i>
+
+            <i class="fa-regular fa-star" v-for="(elem, index) in 5 - Math.round(propsSerie.vote_average / 2)"></i>
+        </div>
         
     </div>
 </template>
