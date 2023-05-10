@@ -1,16 +1,42 @@
 <script>
 export default{
     name:"SeriesComp",
-    props: ['propsSerie', 'propsPathSerie']
+    props: ['propsSerie', 'propsPathSerie'],
+    data() {
+            return {
+
+            }
+        },
+        created() {
+            this.flag
+        },
+        methods: {
+            flag() {
+                let flagInput = this.propsSerie.original_language
+
+                if (flagInput == 'en') {
+                    flagInput = 'gb'
+                } else if (flagInput == 'ja') {
+                    flagInput = 'jp'
+                } else if (flagInput == 'zh') {
+                    flagInput = 'cn'
+                }else{
+                    flagInput = 'fr'
+                }
+                let flag = flagInput.toUpperCase()
+                return flag
+            }
+        }
 }
 </script>
 <template>
 <div class="box2">
-        <img :src=" `${propsPathSerie}${propsSerie.poster_path}`" alt="#">
+        <img class="img1" :src=" `${propsPathSerie}${propsSerie.poster_path}`" alt="#">
         <h1><mark>TITOLO:</mark> {{ propsSerie.name }}</h1>
         <h2><mark>TITOLO ORIGINALE:</mark> {{ propsSerie.name }}</h2>
-        <p><mark>LINGUA:</mark> {{ propsSerie.original_language }}</p>
+        <p><mark>LINGUA:</mark> <img :src="`https://flagsapi.com/${flag()}/flat/64.png`" alt=""></p>
         <p><mark>VOTO:</mark> {{ propsSerie.vote_average }}</p>
+        
     </div>
 </template>
 <style lang="scss" scoped>
@@ -25,7 +51,7 @@ export default{
         margin: 15px;
         color: white;
 
-        img {
+        .img1 {
             width: 100%;
         }
 

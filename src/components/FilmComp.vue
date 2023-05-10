@@ -1,16 +1,46 @@
 <script>
     export default {
         name: "FilmComp",
-        props: ['propsFilm', 'propsPathFilm']
+        props: ['propsFilm', 'propsPathFilm'],
+        data() {
+            return {
+
+            }
+        },
+        created() {
+            this.flag
+        },
+        methods: {
+            flag() {
+                let flagInput = this.propsFilm.original_language
+
+                if (flagInput == 'en') {
+                    flagInput = 'gb'
+                } else if (flagInput == 'ja') {
+                    flagInput = 'jp'
+                } else if (flagInput == 'zh') {
+                    flagInput = 'cn'
+                }else{
+                    flagInput = 'fr'
+                }
+                let flag = flagInput.toUpperCase()
+                return flag
+            },
+            vote(){
+                
+            }
+        }
     }
+    
 </script>
 <template>
     <div class="box1">
-        <img :src=" `${propsPathFilm}${propsFilm.poster_path}`" alt="#">
+        <img class="img1" :src=" `${propsPathFilm}${propsFilm.poster_path}`" alt="#">
         <h1><mark>TITOLO:</mark> {{ propsFilm.title }}</h1>
         <h2><mark>TITOLO ORIGINALE:</mark> {{ propsFilm.original_title }}</h2>
-        <p><mark>LINGUA:</mark> {{ propsFilm.original_language }}</p>
+        <p><mark>LINGUA:</mark> <img :src="`https://flagsapi.com/${flag()}/flat/64.png`" alt=""></p>
         <p><mark>VOTO:</mark> {{ propsFilm.vote_average }}</p>
+        
     </div>
 </template>
 <style lang="scss" scoped>
@@ -25,7 +55,7 @@
         margin: 15px;
         color: white;
 
-        img {
+        .img1 {
             width: 100%;
         }
 
