@@ -40,8 +40,8 @@
     
                 <i class="fa-regular fa-star" v-for="(elem, index) in 5 - Math.ceil(propsFilm.vote_average / 2)"></i>
             </div>
-            <p class="description"> {{ propsFilm.overview }}</p>
             <p><img :src="`https://flagsapi.com/${flag()}/flat/64.png`" alt=""></p>
+            <p class="description"> {{ propsFilm.overview }}</p>
         </div>
         
     </div>
