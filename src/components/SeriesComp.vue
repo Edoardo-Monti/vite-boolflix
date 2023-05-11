@@ -32,43 +32,65 @@ export default{
 <template>
 <div class="box2">
         <img class="img1" :src=" `${propsPathSerie}${propsSerie.poster_path}`" alt="#">
-        <h1><mark>TITOLO:</mark> {{ propsSerie.name }}</h1>
-        <h2><mark>TITOLO ORIGINALE:</mark> {{ propsSerie.name }}</h2>
-        <p><mark>LINGUA:</mark> <img :src="`https://flagsapi.com/${flag()}/flat/64.png`" alt=""></p>
-        <p><mark>VOTO:</mark> {{ propsSerie.vote_average }}</p>
-        <p><mark>VOTO:</mark> {{ Math.round(propsSerie.vote_average / 2) }}</p>
-        <div class="d-flex">
-            <i class="fa-solid fa-star" style="color: #ffee2e;" v-for="(elem, index) in Math.round(propsSerie.vote_average / 2)"></i>
-
-            <i class="fa-regular fa-star" v-for="(elem, index) in 5 - Math.round(propsSerie.vote_average / 2)"></i>
+        <div class="card-box">
+            <h1> {{ propsSerie.name }}</h1>
+            <div class="d-flex">
+                <i class="fa-solid fa-star" style="color: #ffee2e;" v-for="(elem, index) in Math.ceil(propsSerie.vote_average / 2)"></i>
+    
+                <i class="fa-regular fa-star" v-for="(elem, index) in 5 - Math.ceil(propsSerie.vote_average / 2)"></i>
+            </div>
+            <p class="description"> {{ propsSerie.overview }}</p>
+            <p><img :src="`https://flagsapi.com/${flag()}/flat/64.png`" alt=""></p>
+            
         </div>
         
     </div>
 </template>
 <style lang="scss" scoped>
 .box2 {
-        // background-image: url('https://image.tmdb.org/t/p/w342/1QJ2ooSZ6Ij6oPVyYtp7HLieW6f.jpg');
-        // background-repeat: none;
-        // background-size: cover;
-        min-width: 200px;
-        min-height: 550px;
-        // border: 1px solid black;
-        padding: 10px;
-        margin: 15px;
+        width: 300px;
+        height: 400px;
+        // padding: 5px;
+        margin: 5px;
         color: white;
+        position: relative;
+        &:hover{
+            .card-box{
+                right: 0;
+                transition: 1.5s;
+            }
+        }
 
         .img1 {
+            width: 300px;
+            height: 100%;
+        }
+        .card-box{
             width: 100%;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            right: -100%;
+            background: #1f3d474b;
+            backdrop-filter: blur(4px);
+            padding: 10px 30px;
+            overflow: scroll;
+            h1 {
+                margin-top: 30px;
+                font-size: 30px;
+                font-weight: 500;
+                text-transform: uppercase;
+            }
+            .description{
+                font-size: 13px;
+                margin: 30px 0;
+            }
+            p{
+                img{
+                    width: 20px;
+                }
+            }
         }
 
-        h1 {
-            margin-top: 10px;
-            font-size: 15px;
-        }
-
-        h2 {
-            color: white;
-            font-size: 15px;
-        }
     }
 </style>

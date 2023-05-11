@@ -35,9 +35,6 @@ h1{
         color: white;
         padding-left: 180px;
         padding-top: 30px;
-        // position: absolute;
-        // top: 0;
-        // left: 0;
     }
 .cont-80{
     width: 80%;
