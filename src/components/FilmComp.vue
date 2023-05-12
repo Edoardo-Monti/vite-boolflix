@@ -58,6 +58,7 @@
             .card-box{
                 right: 0;
                 transition: 1.5s;
+                
             }
         }
 
